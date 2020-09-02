@@ -1,10 +1,31 @@
 {
+  "name": "mymanager",
+  "version": "1.0.0",
+  "description": "Aplicação de administracao de horas",
+  "main": "index.js",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "colors": "^1.3.3",
-    "express": "^4.16.3",
-    "express-validator": "5.3.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
     "marko": "^4.13.4-1",
-    "sqlite3": "^4.0.2"
-  }
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fejacobucci/myManager.git"
+  },
+  "keywords": [
+    "mymanager"
+  ],
+  "author": "Felipe F Jacobucci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fejacobucci/myManager/issues"
+  },
+  "homepage": "https://github.com/fejacobucci/myManager#readme"
 }
