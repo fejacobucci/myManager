@@ -1,0 +1,81 @@
+
+#tabela{
+
+    height: 260px;
+    overflow: hidden scroll;
+    width: 700px;
+    margin: auto;
+    margin-top: 70px;
+    
+}
+#tabela thead th {
+    position: sticky;
+    background-color: #FFF;
+    top: 0;
+    left: 0;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
+#form1{
+
+    width: 500px;
+    margin: auto;
+    margin-top: 80px;
+
+}
+#comboProjeto{
+
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+
+}
+#inputTempoUsado{
+
+    width: 45px;
+  
+}
+#inputData{
+
+    width: 175px;
+    
+}
+#ComboTarefa{
+
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+
+
+
