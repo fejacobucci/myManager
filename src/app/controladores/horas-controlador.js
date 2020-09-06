@@ -6,13 +6,19 @@ class HoraControlador{
 
     static rotas(){
         return{
-            home:'/',
-            apontamento:'../views/registraHora.marko'
+            home: '/',
+            login: '../views/login.marko',
+            apontamento:'../views/horas/registraHora.marko'
         };
     }
 
-    apontamento(){
+    login(){
+        return function (req, res) {
+            res.marko(require(HoraControlador.rotas().login));
+        };
+    }
 
+    apontamento() {
         return function (req, res) {
             res.marko(require(HoraControlador.rotas().apontamento));
         };
