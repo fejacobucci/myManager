@@ -4,17 +4,15 @@ const dbE = require("../../config/BancoDeHoras");
 
 class HoraControlador{
 
-    static rotas(){
-        return{
-            home: '/',
-            login: '../views/login.marko',
-            apontamento:'../views/horas/registraHora.marko'
+    static funcionalidade() {
+        return {
+            apontamento: '/apontamento'
         };
     }
 
-    login(){
-        return function (req, res) {
-            res.marko(require(HoraControlador.rotas().login));
+    static rotas(){
+        return{
+            apontamento:'../views/horas/registraHora.marko'
         };
     }
 
@@ -25,4 +23,4 @@ class HoraControlador{
     }
 
 }
-module.exports = HoraControlador
+module.exports = HoraControlador;
