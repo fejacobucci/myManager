@@ -31,6 +31,30 @@ class projetosDAO {
 		})
 	}
 
+	cadastraProjeto(projeto) {
+        var SQL = "";
+        SQL = "INSERT INTO Projeto (titulo,cliente,proposta,tempoEstimado,dataPrevInicio,dataPrevFim)";
+        SQL += " VALUES(?,?,?,?,?,?)";
+
+        console.log(">> Criando produto novo");
+        return new Promise((resolve, reject) => {
+            this._db.run(
+                SQL, [
+                    projeto.titulo,
+					projeto.cliente.value,
+					projeto.proposta,
+                    projeto.tempoEstimado,
+                    projeto.dataPrevInicio,
+                    projeto.dataPrevFim
+                ],
+                (erro) => {
+                    if (erro) return reject("ERRO AO CONSULTAR O ESTOQUE: " + erro);
+                    resolve();
+                }
+            )
+        });
+    }
+
 }
 
 module.exports = projetosDAO;

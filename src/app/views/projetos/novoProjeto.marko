@@ -21,7 +21,7 @@
 
 <body style="width: auto;height: auto;">
     <nav class="navbar navbar-dark navbar-expand-md" id="app-navbar" style="margin: 5px;width: auto;height: auto;padding: 1px;">
-        <div class="container-fluid"><a class="navbar-brand" href="#"><i class="icon ion-ios-infinite" id="brand-logo"></i></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container-fluid"><a class="navbar-brand" href="/home"><i class="icon ion-ios-infinite" id="brand-logo"></i></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div
                 class="collapse navbar-collapse" id="navcol-1" style="width: auto;height: auto;margin: 5px;padding: 1px;">
                 <ul class="nav navbar-nav ml-auto">
@@ -33,29 +33,38 @@
         </div>
     </nav>
     <div style="width: auto;height: auto;">
-        <form id="novoProjeto" method="post" action="/novoProduto">
+        <form id="novoProjeto" method="post" action="/novoProjeto">
             <div class="container" style="width: auto;height: auto;">
                 <div class="form-row" style="width: auto;height: auto;">
                     <div class="col-md-4" style="width: auto;height: auto;">
                         <h2 style="width: 343px;">Novo Projeto</h2>
                     </div>
                     <div class="col-md-4 d-flex justify-content-end align-self-start" style="width: auto;height: auto;"></div>
-                    <div class="col-md-4 d-flex justify-content-center align-items-center" style="width: auto;height: auto;"><a class="btn btn-primary d-flex align-items-center align-self-center" id="salvar" type="button" style="height: 38px;background-color: rgb(21,221,4);">Salvar&nbsp;<i class="fa fa-plus-circle"></i></a></div>
+                    <div class="col-md-4 d-flex justify-content-center align-items-center" style="width: auto;height: auto;"><button class="btn btn-primary d-flex align-items-center align-self-center" id="salvar" type="submit" data-target='#novoProjeto' style="height: 38px;background-color: rgb(21,221,4);">Salvar&nbsp;<i class="fa fa-plus-circle"></i></button></div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-12">
-                        <form>
+                        <form id="formProjeto" action="/projeto" method="post">
                             <div class="form-row">
                                 <div class="col-sm-12">
-                                    <div class="form-group"><label>Título</label><input class="form-control" type="text" id="titulo" name="titulo"></div>
+                                    <div class="form-group"><label>Título</label><input class="form-control" type="text" id="titulo" name="titulo" placeholder="Um título para este projeto..."></div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-sm-6">
-                                    <div class="form-group"><label>Cliente</label><select class="form-control" id="cliente" name="cliente"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                    <div class="form-group"><label>Cliente</label><select class="form-control" id="cliente" name="cliente">
+                                        <optgroup label="Clientes Cadastrados">
+                                            <option value="0" selected>Selecione...</option>
+                                            <option for(clientes in data.clientes) value="${clientes.id}">${clientes.nome}</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-group"><label>Proposta</label><select class="form-control" id="proposta" name="proposta"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                    <div class="form-group">
+                                        <label>Proposta</label>
+                                        <input class="form-control" id="proposta" type="text" name="proposta" placeholder="Proposta comercial incial...">
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -66,7 +75,7 @@
                                     <div class="form-group"><label>Data Prevista para o término</label><input class="form-control" id="dataPrevFim" type="date"></div>
                                 </div>
                                 <div class="col-sm-3">
-                                    <div class="form-group"><label>Tempo estimado (em horas)</label><input class="form-control" type="text" id="tempoEstimado" name="tempoEstimado"></div>
+                                    <div class="form-group"><label>Tempo estimado (em horas)</label><input class="form-control" type="text" id="tempoEstimado" name="tempoEstimado" placeholder="Tempo em horas..."></div>
                                 </div>
                             </div>
                         </form>

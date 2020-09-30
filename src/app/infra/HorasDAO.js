@@ -1,4 +1,4 @@
-class projetosDAO {
+class horasDAO {
 
     constructor(db) {
         this._db = db;
@@ -62,4 +62,4 @@ class projetosDAO {
 
 }
 
-module.exports = projetosDAO;
+module.exports = horasDAO;

@@ -1,5 +1,5 @@
-const { check, validationResult } = require('express-validator');
 const DataAccess = require("../infra/HorasDAO");
+const ClientAccess = require("../infra/ClientesDAO");
 const dbE = require("../../config/DataBaseConfiguration");
 
 class HoraControlador{
@@ -19,20 +19,21 @@ class HoraControlador{
     apontamento() {
         return function(req, resp) {
             console.log('Abrindo a página de apontamento de horas');
-            var auxProjetos = '';
-            var auxAtividades = '';
             const horasDao = new DataAccess(dbE);
+            const clientesDao = new ClientAccess(dbE);
 
+            clientesDao.listaClientes().then(clientes =>
             horasDao.listaProjetos().then(projetos =>
             horasDao.listaAtividades().then(atividades =>
                 resp.marko(
                     require(HoraControlador.rotas().apontamento),
                     {
+                        clientes: clientes,
                         projetos: projetos,
                         atividades: atividades
                     }
                 )
-            ));
+            )));
             
             
                     

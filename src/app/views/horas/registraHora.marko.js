@@ -18,16 +18,30 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
 function render(input, out, __component, component, state) {
   var data = input;
 
-  out.w("<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"><title>apontamentoHoras</title><link rel=\"stylesheet\" href=\"/estatico/assets/bootstrap/css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/fonts/font-awesome.min.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/fonts/ionicons.min.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Dark-NavBar-1.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Dark-NavBar-2.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Dark-NavBar.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Features-Boxed.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Formulario-Farmacia.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/gradient-navbar-1.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/gradient-navbar.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Lista-Productos-Canito.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/styles.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/untitled.css\"></head><body style=\"width: auto;height: auto;\">");
+  out.w("<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\"><title>apontamentoHoras</title><link rel=\"stylesheet\" href=\"/estatico/assets/bootstrap/css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/fonts/font-awesome.min.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/fonts/ionicons.min.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Dark-NavBar-1.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Dark-NavBar-2.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Dark-NavBar.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Features-Boxed.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Formulario-Farmacia.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/gradient-navbar-1.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/gradient-navbar.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/Lista-Productos-Canito.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/styles.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/untitled.css\"><link rel=\"stylesheet\" href=\"/estatico/assets/css/calendario.css\"></head><body style=\"width: auto;height: auto;\">");
 
   component_globals_tag({}, out);
 
-  out.w("<nav class=\"navbar navbar-dark navbar-expand-md\" id=\"app-navbar\" style=\"margin: 5px;width: auto;height: auto;padding: 1px;\"><div class=\"container-fluid\"><a class=\"navbar-brand\" href=\"#\"><i class=\"icon ion-ios-infinite\" id=\"brand-logo\"></i></a><button data-toggle=\"collapse\" class=\"navbar-toggler\" data-target=\"#navcol-1\"><span class=\"sr-only\">Toggle navigation</span><span class=\"navbar-toggler-icon\"></span></button><div class=\"collapse navbar-collapse\" id=\"navcol-1\"><ul class=\"nav navbar-nav ml-auto\"><li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"/home\">Home</a></li><li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link\" href=\"#\">Meus Dados</a></li><li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link\" href=\"#\">Logout</a></li></ul></div></div></nav><div style=\"width: auto;height: auto;\"><div class=\"container\" style=\"width: auto;height: auto;\"><div class=\"row\" style=\"width: auto;height: auto;\"><div class=\"col-md-4 col-lg-10\" style=\"width: auto;height: auto;\"><h2 style=\"width: 343px;\">Apontamento de Horas</h2></div><div class=\"col-md-4 col-lg-2 d-flex justify-content-center align-items-center\" style=\"width: auto;height: auto;\"><button class=\"btn btn-primary d-flex align-items-center align-self-center\" type=\"button\" style=\"height: 38px;background-color: rgb(21,221,4);\">SALVAR&nbsp;<i class=\"fa fa-plus-circle\"></i></button></div></div></div></div><div class=\"container\"><div class=\"row\"><div class=\"col-md-12\"><form method=\"post\"><div class=\"form-row\"><div class=\"col-md-12 col-lg-12\"><div class=\"form-group\"><div class=\"col-sm-4\"><label class=\"col-form-label\" style=\"font-family:Lato, sans-serif;font-weight:normal;\" for=\"nombre\">Projeto</label></div><div class=\"col-sm-8\" id=\"projeto\" name=\"projeto\"><select class=\"form-control\" id=\"projeto\" name=\"projeto\"><optgroup label=\"Projetos\">");
+  out.w("<nav class=\"navbar navbar-dark navbar-expand-md\" id=\"app-navbar\" style=\"margin: 5px;width: auto;height: auto;padding: 1px;\"><div class=\"container-fluid\"><a class=\"navbar-brand\" href=\"/home\"><i class=\"icon ion-ios-infinite\" id=\"brand-logo\"></i></a><button data-toggle=\"collapse\" class=\"navbar-toggler\" data-target=\"#navcol-1\"><span class=\"sr-only\">Toggle navigation</span><span class=\"navbar-toggler-icon\"></span></button><div class=\"collapse navbar-collapse\" id=\"navcol-1\"><ul class=\"nav navbar-nav ml-auto\"><li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"/home\">Home</a></li><li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link\" href=\"#\">Meus Dados</a></li><li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link\" href=\"#\">Logout</a></li></ul></div></div></nav><div style=\"width: auto;height: auto;\"><div class=\"container\" style=\"width: auto;height: auto;\"><div class=\"row\" style=\"width: auto;height: auto;\"><div class=\"col-md-4 col-lg-10\" style=\"width: auto;height: auto;\"><h2 style=\"width: 343px;\">Apontamento de Horas</h2></div></div></div></div><div><div class=\"container\"><div class=\"row\" style=\"margin: 1px;padding: 0px;\"><div class=\"col-md-5 col-lg-5 offset-lg-4\" style=\"margin: 5px;padding: 1px;\"><div class=\"table-responsive\" style=\"font-size: 9px;\"><table class=\"table\"><thead><tr><th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sab</th></tr></thead> <tbody> <ol type=\"I\"><tr for|i| from=0 to=5><td for|j| from=0 to=7><p>---</p></td></tr> </ol> </tbody> </table></div></div><div class=\"col\"><form><div class=\"form-group\"><div class=\"form-row\"><div class=\"col\" style=\"width: 100%;\"><p>Cliente<select class=\"form-control\" id=\"cliente\" style=\"width: 100%;\" name=\"cliente\"><optgroup label=\"Clientes Cadastrados\"><option value=\"0\" selected>Selecione...</option>");
 
-  var for__54 = 0;
+  var for__69 = 0;
+
+  marko_forEach(data.clientes, function(clientes) {
+    var keyscope__70 = "[" + ((for__69++) + "]");
+
+    out.w("<option value=\"" +
+      marko_escapeXmlAttr(clientes.id) +
+      "\">" +
+      marko_escapeXml(clientes.nome) +
+      "</option>");
+  });
+
+  out.w("</optgroup></select></p></div></div><div class=\"form-row\"><div class=\"col\"><p>Projeto<select class=\"form-control\" id=\"projeto\" style=\"width: 100%;\" name=\"projeto\"><optgroup label=\"Projetos atribuídos à você\"><option value=\"0\" selected>Selecione...</option>");
+
+  var for__78 = 0;
 
   marko_forEach(data.projetos, function(projetos) {
-    var keyscope__55 = "[" + ((for__54++) + "]");
+    var keyscope__79 = "[" + ((for__78++) + "]");
 
     out.w("<option value=\"" +
       marko_escapeXmlAttr(projetos.id) +
@@ -36,25 +50,25 @@ function render(input, out, __component, component, state) {
       "</option>");
   });
 
-  out.w("</optgroup></select></div></div><div class=\"form-group\"><div class=\"col-sm-4\"><label class=\"col-form-label\" style=\"font-family:Lato, sans-serif;font-weight:normal;\" for=\"titular\">Tempo Utilizado (em horas)</label></div><div class=\"col-sm-4 col-lg-2\"><input class=\"form-control\" type=\"text\" id=\"tempoUtilizado\" name=\"titular\" style=\"width: auto;height: auto;\"></div><div class=\"col-sm-4\"><label style=\"font-family:Lato, sans-serif;font-weight:normal;\" for=\"nombre\">Atividade</label><select class=\"form-control\" id=\"tarefa\" name=\"tarefa\"><optgroup label=\"Tipos de atividades\">");
+  out.w("</optgroup></select></p></div></div><div class=\"form-row\"><div class=\"col\"><p>Atividade<select class=\"form-control\" id=\"atividade\" name=\"atividade\"><optgroup label=\"Clientes que você pode atender\"><option value=\"0\" selected>Selecione...</option>");
 
-  var for__66 = 0;
+  var for__87 = 0;
 
-  marko_forEach(data.atividades, function(atividade) {
-    var keyscope__67 = "[" + ((for__66++) + "]");
+  marko_forEach(data.atividades, function(atividades) {
+    var keyscope__88 = "[" + ((for__87++) + "]");
 
     out.w("<option value=\"" +
-      marko_escapeXmlAttr(atividade.id) +
+      marko_escapeXmlAttr(atividades.id) +
       "\">" +
-      marko_escapeXml(atividade.atividade) +
+      marko_escapeXml(atividades.atividade) +
       "</option>");
   });
 
-  out.w("</optgroup></select></div><div class=\"col-lg-2\"><label style=\"font-family:Lato, sans-serif;font-weight:normal;\" for=\"nombre\">Data da Execução</label><input class=\"form-control\" type=\"date\"></div><div class=\"col-lg-6\"><label style=\"font-family:Lato, sans-serif;font-weight:normal;\" for=\"nombre\">Descrição ou Observação</label><textarea class=\"form-control\" id=\"anotacao\" name=\"anotacao\"></textarea></div></div></div></div></form></div></div></div><script src=\"/estatico/assets/js/jquery.min.js\"></script><script src=\"/estatico/assets/bootstrap/js/bootstrap.min.js\"></script><script src=\"/estatico/assets/js/novoProjeto.js\"></script>");
+  out.w("</optgroup></select></p></div></div><div class=\"form-row\"><div class=\"col\"><p>Tempo(hrs)<input class=\"form-control\" type=\"text\" id=\"tempo\" style=\"width: 100%;\" name=\"tempo\"></p></div><div class=\"col\"><p>Data Execução<input class=\"form-control\" id=\"data\" type=\"date\" style=\"width: 100%;\" name=\"data\"></p></div></div><div class=\"form-row\"><div class=\"col\"><p>Descrição da Atividade<textarea class=\"form-control\" id=\"descricao\" style=\"width: 100%;\" name=\"descricao\"></textarea></p></div></div></div></form><button class=\"btn btn-primary d-flex align-items-center align-self-center\" type=\"button\" style=\"height: 38px;background-color: rgb(4,91,221);filter: invert(0%);\">SALVAR&nbsp;<i class=\"fa fa-plus-circle\"></i></button></div></div></div></div><script src=\"/estatico//estatico/assetsjs/jquery.min.js\"></script><script src=\"/estatico//estatico/assetsbootstrap/js/bootstrap.min.js\"></script><script src=\"/estatico//estatico/assetsjs/novoProjeto.js\"></script>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "78");
+  await_reorderer_tag({}, out, __component, "106");
 
   out.w("</body></html>");
 }
