@@ -1,11 +1,11 @@
 var app = {
 	settings: {
-		container: $('.calendario-calendar'),
-		calendar: $('.calendario-front'),
-		days: $('.calendario-weeks span'),
-		form: $('.calendario-back'),
-		input: $('.calendario-back input'),
-		buttons: $('.calendario-back button')
+		container: $('.calendar'),
+		calendar: $('.front'),
+		days: $('.weeks span'),
+		form: $('.back'),
+		input: $('.back input'),
+		buttons: $('.back button')
 	},
 
 	init: function() {
@@ -15,7 +15,7 @@ var app = {
 	},
 
 	swap: function(currentSide, desiredSide) {
-		settings.container.toggleClass('calendario-flip');
+		settings.container.toggleClass('flip');
 
 		currentSide.fadeOut(900);
 		currentSide.hide();
