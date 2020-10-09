@@ -36,6 +36,12 @@ class BaseControlador {
             res.marko(require(BaseControlador.rotas().login));
         };
     }
+    efetuaLogin() {
+        return function (req, res) {
+            //Logica
+        };
+    }
+
 
 }
 module.exports = BaseControlador;

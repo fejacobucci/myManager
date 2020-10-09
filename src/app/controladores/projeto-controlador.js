@@ -42,14 +42,14 @@ class ProjetoControlador {
             const projetosDao = new DataAccess(dbE);
             
 
-
-            projetosDao.listaProjetos()
+            projetosDao.listaTarefas()
+            .then(projetosDao.listaProjetos()
                     .then(projetos => resp.marko(
                         require(ProjetoControlador.rotas().listaProjetos),
                         {
                             projetos: projetos
                         }
-                    ))
+                    )))
                     .catch(erro => console.log(erro));
         };
     }

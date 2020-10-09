@@ -16,6 +16,9 @@ module.exports = (app) => {
     /// A partir daqui vem as declaracoes de rotas de paginacao
     app.get(rotasBase.base, baseControlador.base());
     app.get(rotasBase.home, baseControlador.home());
-    app.get(rotasBase.login, LoginValidator.validacoes(),baseControlador.login());
+
+    app.route(rotasBase.login)
+        .get(baseControlador.login())
+        .post(LoginValidator.validacoes(),baseControlador.efetuaLogin());
 
 }

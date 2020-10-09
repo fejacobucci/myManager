@@ -5,8 +5,6 @@ class projetosDAO {
     }
 	
 	
-
-	//CARREGA LISTA DE PROJETOS
     listaProjetos() {
 		var SQL = '';
 
@@ -19,7 +17,31 @@ class projetosDAO {
 				(erro, resultado) => {
 
 					if(erro) {
-						return reject("ERRO NA CONSULTA DOS SERVICOS: " + erro );
+						return reject("ERRO NA CONSULTA DOS PROJETOS: " + erro );
+
+					}else{
+					    return resolve(resultado);	
+
+					}
+					
+				}
+			)
+		})
+    }
+    
+    listaTarefas() {
+		var SQL = '';
+
+		SQL = 'SELECT * FROM Tarefa_Projeto'; 
+		console.log('SQL: ' + SQL);
+
+		return new Promise((resolve, reject) => {
+			this._db.all(
+				SQL,
+				(erro, resultado) => {
+
+					if(erro) {
+						return reject("ERRO NA CONSULTA DAS TAREFAS: " + erro );
 
 					}else{
 					    return resolve(resultado);	
@@ -48,7 +70,7 @@ class projetosDAO {
                     projeto.dataPrevFim
                 ],
                 (erro) => {
-                    if (erro) return reject("ERRO AO CONSULTAR O ESTOQUE: " + erro);
+                    if (erro) return reject("ERRO AO CADASTRAR PROJETO: " + erro);
                     resolve();
                 }
             )
