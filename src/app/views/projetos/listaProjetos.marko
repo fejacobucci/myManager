@@ -61,7 +61,9 @@
                             </thead>
                             <tbody>
                                 <tr for (projetos in data.projetos)>
-                                    <td value"${projetos.id}">${projetos.titulo}</td>
+                                    <td value"${projetos.id}">
+                                        <a href="/projetos/${projetos.id}" class="nav__link" data-link>${projetos.titulo}</a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
