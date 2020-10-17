@@ -10,7 +10,7 @@ class clintesDAO {
     listaClientes() {
 		var SQL = '';
 
-		SQL = 'SELECT * FROM Clientes'; 
+		SQL = 'SELECT * FROM Clientes AS C JOIN Cliente_Usuario AS B WHERE B.usuario like "%2%" AND C.id = B.cliente'; 
 		console.log('SQL: ' + SQL);
 
 		return new Promise((resolve, reject) => {

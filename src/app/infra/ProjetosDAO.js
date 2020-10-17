@@ -8,7 +8,7 @@ class projetosDAO {
     listaProjetos() {
 		var SQL = '';
 
-		SQL = 'SELECT * FROM Projeto'; 
+		SQL = 'SELECT * FROM Projeto WHERE atribuicao like "%2%" AND situacao != "F"'; 
 		console.log('SQL: ' + SQL);
 
 		return new Promise((resolve, reject) => {
