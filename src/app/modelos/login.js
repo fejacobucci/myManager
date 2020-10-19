@@ -1,8 +1,8 @@
-const { check, validationResult } = require('express-validator');
+const { check } = require('express-validator/check');
 class Login{
     static validacoes(){
         return[
-            check('usuario').isLength({min:5}).withMessage('Login invalido'),
+            check('email').isLength({min:5}).withMessage('Login invalido'),
             check('senha').isLength({min:6}).withMessage('Senha Inválida')
         ];
     }

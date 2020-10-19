@@ -11,6 +11,7 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
     component_globals_tag = marko_loadTag(require("marko/src/components/taglib/component-globals-tag")),
     marko_forEach = marko_helpers.f,
     marko_escapeXml = marko_helpers.x,
+    marko_escapeXmlAttr = marko_helpers.xa,
     init_components_tag = marko_loadTag(require("marko/src/components/taglib/init-components-tag")),
     await_reorderer_tag = marko_loadTag(require("marko/src/taglibs/async/await-reorderer-tag"));
 
@@ -28,16 +29,18 @@ function render(input, out, __component, component, state) {
   marko_forEach(data.projetos, function(projetos) {
     var keyscope__58 = "[" + ((for__57++) + "]");
 
-    out.w("<tr><td value($escapeXml(projetos.id))>" +
+    out.w("<tr><td value($escapeXml(projetos.id))><a href=\"/projetos/" +
+      marko_escapeXmlAttr(projetos.id) +
+      "\" class=\"nav__link\" data-link>" +
       marko_escapeXml(projetos.titulo) +
-      "</td></tr>");
+      "</a></td></tr>");
   });
 
   out.w("</tbody></table></div></div><div class=\"col-md-6\"><div class=\"row\"><div class=\"col\"><div class=\"steps-progressbar\"><strong>Etapas do Projeto</strong><ul><li class=\"previous\">Item 1</li><li class=\"active\">Item 2</li><li>Item 3</li><li>Item 4</li></ul></div></div></div><div class=\"row\"><div class=\"col\"></div></div><div class=\"row\"><div class=\"col\"><div class=\"card\"><strong>Detalhes</strong><div class=\"card-header\"><a class=\"btn header-arrow-btn\" role=\"button\" data-toggle=\"collapse\" href=\"#detailed-view\"><i class=\"fa fa-chevron-right\"></i><i class=\"fa fa-chevron-down\"></i></a><span>Sample-Card</span><div class=\"btn-group custom-btngrp\" role=\"group\"><button class=\"btn btn-outline-primary\" type=\"button\"><i class=\"fa fa-tasks\"></i><span>Editar</span></button><button class=\"btn btn-outline-danger\" type=\"button\"><i class=\"fa fa-trash\"></i><span>Deletar</span></button><div class=\"dropdown btn-group no-arrow\" role=\"group\"><button class=\"btn btn-outline-primary dropdown-toggle border-primary\" data-toggle=\"dropdown\" aria-expanded=\"false\" type=\"button\"><i class=\"fas fa-ellipsis-h\" data-bs-hover-animate=\"rubberBand\"></i></button><div class=\"dropdown-menu dropdown-menu-right animated--fade-in\" role=\"menu\"><a class=\"dropdown-item\" role=\"presentation\" href=\"#\">Iniciar</a><a class=\"dropdown-item\" role=\"presentation\" href=\"#\">Pausar</a><div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" role=\"presentation\" href=\"#\">Encerrar</a></div></div></div></div><div class=\"card-body collapse show\" id=\"detailed-view\"><div><ul class=\"nav nav-tabs\"><li class=\"nav-item\"><a class=\"nav-link active\" role=\"tab\" data-toggle=\"tab\" href=\"#tab-1\">Overview</a></li><li class=\"nav-item\"><a class=\"nav-link\" role=\"tab\" data-toggle=\"tab\" href=\"#tab-2\">Atividades</a></li></ul><div class=\"tab-content\"><div class=\"tab-pane active\" role=\"tabpanel\" id=\"tab-1\"><div class=\"row\"><div class=\"col-lg-6\"><div class=\"row\"><div class=\"col-md-4 label-col\"><label class=\"col-form-label\"><b>Dt.Inicio</b></label></div><div class=\"col-md-8 data-col\"><p>Sem data</p></div></div></div><div class=\"col-lg-6\"><div class=\"row\"><div class=\"col-md-4 label-col\"><label class=\"col-form-label\"><b>Dt.Fim</b></label></div><div class=\"col-md-8 data-col\"><p>Sem data</p></div></div></div></div><div class=\"row\"><div class=\"col-lg-6\"><div class=\"row\"><div class=\"col-md-4 label-col\"><label class=\"col-form-label\"><b>Prev.Inicio</b></label></div><div class=\"col-md-8 data-col\"><p>01/10/2020</p></div></div></div><div class=\"col-lg-6\"><div class=\"row\"><div class=\"col-md-4 label-col\"><label class=\"col-form-label\"><b>Prev.Fim</b></label></div><div class=\"col-md-8 data-col\"><p>22/10/2020</p></div></div></div></div></div><div class=\"tab-pane\" role=\"tabpanel\" id=\"tab-2\"><span>No Record Found</span></div></div></div></div></div></div></div></div></div></div></div><script src=\"/estatico/assets/js/jquery.min.js\"></script><script src=\"/estatico/assets/bootstrap/js/bootstrap.min.js\"></script><script src=\"/estatico/assets/js/bs-init.js\"></script><script src=\"/estatico/assets/js/novoProjeto.js\"></script>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "142");
+  await_reorderer_tag({}, out, __component, "143");
 
   out.w("</body></html>");
 }

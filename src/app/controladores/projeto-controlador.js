@@ -1,6 +1,10 @@
+const { validationResult } = require('express-validator/check');
+
 const DataAccess = require("../infra/ProjetosDAO");
 const ClientAccess = require("../infra/ClientesDAO");
 const dbE = require("../../config/DataBaseConfiguration");
+
+const modelos = require('../views/templates');
 
 class ProjetoControlador {
 

@@ -1,5 +1,6 @@
 /// OBS: ROTAS ENCAPSULADAS NOS CONTROLADORES
 //Requerimentos de controladores
+console.log('CARREGANDO CONTROLADOR HORAS');
 const HoraControlador = require('../controladores/horas-controlador');
 
 //Constantes de controle
@@ -8,7 +9,6 @@ const horaControlador = new HoraControlador();
 
 //Caminhos
 module.exports = (app) => {
-    
     //Constantes que portam apenas rotas dos controladores
     const rotasHora = HoraControlador.funcionalidade();
 

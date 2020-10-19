@@ -3,21 +3,36 @@ require("marko/node-require").install();
 require("marko/express");
 
 const express = require("express");
-const rotas = require("../app/rotas/rotas"); //Define o caminho para as Rotas da aplicacao.
+const app = express();
 const bodyParser = require("body-parser");
+const methodOverride = require('method-override');
+const templates = require('../app/views/templates');
+
+
+
+app.use("/estatico", express.static("src/app/public"));
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(methodOverride(function (req, res) {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    var method = req.body._method;
+    delete req.body._method;
+    return method;
+  }
+}));
+
+const sessaoAutenticacao = require('./sessao-autenticacao');
+sessaoAutenticacao(app);
+
+const rotas = require("../app/rotas/rotas");
+rotas(app);
+
+app.use(function (req, res, next) {
+  return res.status(404).marko(
+      templates.erro404
+  );
+});
 
 //Devolvendo o objeto para uso.
-module.exports = function () {
-
-    let app = express();
-
-    //Variável Estática
-    app.use("/estatico", express.static("src/app/public"));
-
-    //Middleware
-    app.use(bodyParser.urlencoded({ extended: true }));
-
-    rotas(app); //Chama Rotas passando app como parametro.   
-
-    return app;
-};
+module.exports = app;

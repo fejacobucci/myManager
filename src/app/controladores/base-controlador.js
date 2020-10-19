@@ -1,6 +1,4 @@
-const { check, validationResult } = require('express-validator');
-const DataAccess = require("../infra/BancoDeHorasDAO");
-const dbE = require("../../config/DataBaseConfiguration");
+const modelos= require('../views/templates');
 
 class BaseControlador {
 
@@ -15,7 +13,7 @@ class BaseControlador {
 
     static rotas() {
         return {
-            base:'../views/home.marko',
+            base:'../views/login.marko',
             home:'../views/home.marko',
             login:'../views/login.marko'
         };
@@ -37,8 +35,24 @@ class BaseControlador {
         };
     }
     efetuaLogin() {
-        return function (req, res) {
-            //Logica
+        return function (req, res, next) {
+            const passport = req.passport;
+            passport.authenticate('local',(erro, usuario, info) => {
+                if(info){
+                    return response.marko(modelos.login.login);
+                }
+                if(erro){
+                    return next(erro);
+                }
+
+                req.login(usuario, (erro) => {
+                    if(erro){
+                        next(erro);
+                    }
+
+                    return res.redirect(BaseControlador.rotas().home);
+                });
+            })(req,res,next);
         };
     }
 

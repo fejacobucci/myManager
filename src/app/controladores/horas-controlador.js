@@ -2,8 +2,9 @@ const DataAccess = require("../infra/HorasDAO");
 const ClientAccess = require("../infra/ClientesDAO");
 const dbE = require("../../config/DataBaseConfiguration");
 
-class HoraControlador{
+const modelos = require('../views/templates');
 
+class HoraControlador {
     static funcionalidade() {
         return {
             apontamento: '/apontamento'

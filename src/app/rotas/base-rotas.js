@@ -1,5 +1,6 @@
 /// OBS: ROTAS ENCAPSULADAS NOS CONTROLADORES
 //Requerimentos de controladores
+console.log('CARREGANDO CONTROLADOR BASE');
 const BaseControlador = require('../controladores/base-controlador');
 
 //Constantes de controle
@@ -10,7 +11,6 @@ const LoginValidator = require('../modelos/login');
 
 //Caminhos
 module.exports = (app) => {
-    
     //Constantes que portam apenas rotas dos controladores
     const rotasBase = BaseControlador.funcionalidade();
     /// A partir daqui vem as declaracoes de rotas de paginacao
@@ -19,6 +19,6 @@ module.exports = (app) => {
 
     app.route(rotasBase.login)
         .get(baseControlador.login())
-        .post(LoginValidator.validacoes(),baseControlador.efetuaLogin());
+        .post(baseControlador.efetuaLogin());
 
 }

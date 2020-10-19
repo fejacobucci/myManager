@@ -2,14 +2,19 @@
   "name": "mymanager",
   "version": "1.0.0",
   "description": "Aplicação de administracao de horas",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "express-validator": "^6.6.1",
-    "marko": "^4.13.4-1",
-    "nodemon": "^2.0.2",
-    "sqlite3": "^5.0.0"
+    "body-parser": "1.18.3",
+    "express": "4.16.3",
+    "express-session": "1.15.6",
+    "express-validator": "5.3.1",
+    "marko": "4.13.4-1",
+    "method-override": "3.0.0",
+    "nodemon": "1.18.4",
+    "passport": "0.4.0",
+    "passport-local": "1.0.0",
+    "sqlite3": "5.0.0",
+    "uuid": "3.3.2"
   },
   "devDependencies": {},
   "scripts": {
