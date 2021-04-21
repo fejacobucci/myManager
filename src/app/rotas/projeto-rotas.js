@@ -7,7 +7,7 @@ const ProjetoControlador = require('../controladores/projeto-controlador');
 const projetoControlador = new ProjetoControlador();
 
 //Modelos validadores
-const ProjetoValidador = require('../modelos/projetos');
+//const ProjetoValidador = require('../modelos/projetos');
 
 //Caminhos
 module.exports = (app) => {
@@ -17,7 +17,7 @@ module.exports = (app) => {
     //Montagem de rotas de projetos
     app.route(rotasProjetos.novoProjeto)
         .get(projetoControlador.novoProjeto())
-        .post(ProjetoValidador.validacoes(), projetoControlador.cadastrarProjeto())
+        .post(projetoControlador.cadastrarProjeto())
         .put(projetoControlador.novoProjeto());
 
     app.get(rotasProjetos.listaProjetos, projetoControlador.listaProjetos());

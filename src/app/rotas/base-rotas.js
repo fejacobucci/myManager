@@ -7,7 +7,7 @@ const BaseControlador = require('../controladores/base-controlador');
 const baseControlador = new BaseControlador();
 
 //Modelos validadores
-const LoginValidator = require('../modelos/login');
+//const LoginValidator = require('../modelos/login');
 
 //Caminhos
 module.exports = (app) => {
